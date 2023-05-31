@@ -8,9 +8,7 @@ bool isEven(int number) {
 void processValues(int values[], int targets[]) {
     for(int i = 0; i < 3; i++) {
         for(int j = i + 1; j < 4; j++) {
-            int firstNumber = values[i];
-            int secondNumber = values[j];
-            int result = firstNumber + secondNumber;
+            int result = values[i] + values[j];
             if(result <= targets[0] || result > targets[1]){
                 cout << values[i] << " + " << values[j] << " = " << result << '\n';
                 cout << isEven(values[i]) << ' ' << isEven(values[j]) << ' ' << isEven(result) << '\n';
