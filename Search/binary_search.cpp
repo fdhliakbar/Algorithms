@@ -1,4 +1,3 @@
-// C++ program to implement iterative Binary Search
 #include <bits/stdc++.h>
 using namespace std;
 
