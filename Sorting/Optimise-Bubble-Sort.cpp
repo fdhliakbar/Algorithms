@@ -36,9 +36,9 @@ int main() {
     cout << "Before: ";
     printArray(data, size);
 
-    bubbleSort(data, size);
+    bubbleSort(data, size, count);
 
     cout << "After: ";
-    printArray(data, size, count);
+    printArray(data, size);
     return 0;
 }
