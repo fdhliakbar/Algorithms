@@ -19,7 +19,7 @@ int binarySearch(int values[], int left, int right, int searchKey){
 }
 
 int main(){
- 	int values[5] = { 2, 3, 4, 10, 40 };
+	int values[5] = { 2, 3, 4, 10, 40 };
 	int searchKey = 10;
 	int n = sizeof(values) / sizeof(values[0]);
 	int result = binarySearch(values, 0, n - 1, searchKey);
