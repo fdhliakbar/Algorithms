@@ -44,7 +44,7 @@ int main(){
         jalan = jalan->berikut;
     }
 
-    // langkah enam : bukti bahwa pointer kepala tidak kehilangan data
+    // langkah enam : bukti bahwa pointer kepala tidak kehilangan data.
     cout << "Mencetak node pertama dari pointer kepala : ";
     cout << kepala->data << endl;
     cout << "Mencetak node kedua dari pointer kepala : ";
