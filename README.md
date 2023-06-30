@@ -25,7 +25,3 @@ By following this workflow, **you will build a solid foundation in algorithms an
 <body>
 <img src="https://github.com/fdhliakbar/Algorithms/assets/104522615/ba424709-65b2-4dee-ac57-ac936a1403a1" alt="Ghibli Cat" style="width:100px;">
 </body>
-
-## Thanks
-![Deskripsi GIF](https://github.com/fdhliakbar/Algorithms/assets/104522615/ba424709-65b2-4dee-ac57-ac936a1403a1)
-
