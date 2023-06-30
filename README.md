@@ -23,5 +23,5 @@ By following this workflow, **you will build a solid foundation in algorithms an
 ### El Psy Congroo :)
 
 <body>
-<img src="https://github.com/fdhliakbar/Algorithms/assets/104522615/ba424709-65b2-4dee-ac57-ac936a1403a1" alt="Ghibli Cat" style="width:74px;">
+<img src="https://github.com/fdhliakbar/Algorithms/assets/104522615/ba424709-65b2-4dee-ac57-ac936a1403a1" alt="Ghibli Cat" style="width:100px;">
 </body>
