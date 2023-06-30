@@ -26,3 +26,5 @@ By following this workflow, **you will build a solid foundation in algorithms an
 <body>
 <img src="https://github.com/fdhliakbar/Algorithms/assets/104522615/cc2336d9-ab08-4488-bc33-7483ca86a6db" alt="Pixels and things" style="width:74px;float:right;">
 </body>
+![49d058cf22f410e0b94be0967592c22b](https://github.com/fdhliakbar/Algorithms/assets/104522615/ba424709-65b2-4dee-ac57-ac936a1403a1)
+
