@@ -29,3 +29,11 @@ Sebuah linked list memiliki beberapa karakteristik sebagai berikut:
 - Dalam struktur data linked list, operasi penyisipan dan penghapusan dapat dilakukan dengan mudah
 - Tiap-tiap simpul dari linked list berisi pointer atau tautan yang menjadi alamat dari simpul berikutnya
 - Linked list bisa menyusut atau bertambah kapan saja dengan mudah.
+
+### Referensi
+
+https://www.trivusi.web.id/2022/07/struktur-data-linked-list.html
+
+https://www.geeksforgeeks.org/data-structures/linked-list/
+
+https://www.programiz.com/dsa/linked-list
