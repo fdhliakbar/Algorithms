@@ -41,3 +41,5 @@ Huffman Encoding memiliki berbagai implementasi, seperti:
 Proses Huffman Encoding dimulai dengan analisis frekuensi karakter dalam data. Kemudian, karakter-karakter ini dikelompokkan berdasarkan frekuensi munculnya, sehingga karakter-karakter yang paling sering muncul ditempatkan pada pohon Huffman dengan jarak kode biner yang lebih pendek, dan karakter-karakter yang lebih jarang muncul ditempatkan pada pohon Huffman dengan jarak kode biner yang lebih panjang.
 
 Pohon Huffman terdiri dari simpul (node) yang terhubung oleh garis, yang mewakili jarak kode biner. Pada akhirnya, setiap karakter akan diwakili oleh kode biner yang unik, sehingga karakter dapat direpresentasikan dalam bentuk kode biner.
+
+![image](https://github.com/fdhliakbar/Algorithms/assets/104522615/e204409e-1c23-4866-b0a2-777f9e8b0194)
