@@ -1,67 +1,41 @@
 #include <iostream>
 
-// Node class untuk merepresentasikan setiap elemen dalam linked list
-class Node {
-public:
+// Struktur Node
+struct Node {
     int data;
     Node* next;
-
-    Node(int value) {
-        data = value;
-        next = nullptr;
-    }
 };
 
-// Class LinkedList untuk menyimpan linked list dan operasinya
-class LinkedList {
-private:
-    Node* head;
-public:
-    LinkedList() {
-        head = nullptr;
-    }
+void addNode(Node** head, int newData) {
+    Node* newNode = new Node();
+    newNode->data = newData;
+    newNode->next = (*head);
+    (*head) = newNode;
+}
 
-    // Menambahkan elemen baru ke linked list
-    void addElement(int value) {
-        Node* newNode = new Node(value);
-
-        if (head == nullptr) {
-            head = newNode;
-        } else {
-            Node* temp = head;
-            while (temp->next != nullptr) {
-                temp = temp->next;
-            }
-            temp->next = newNode;
-        }
+int countNodes(Node* head) {
+    int count = 0;
+    Node* current = head;
+    
+    while (current != NULL) {
+        count++;
+        current = current->next;
     }
-
-    // Menghitung jumlah elemen dalam linked list
-    int countElements() {
-        int count = 0;
-        Node* temp = head;
-        while (temp != nullptr) {
-            count++;
-            temp = temp->next;
-        }
-        return count;
-    }
-};
+    
+    return count;
+}
 
 int main() {
-    LinkedList list;
+    Node* head = NULL;
 
-    // Menambahkan elemen ke linked list
-    list.addElement(10);
-    list.addElement(20);
-    list.addElement(30);
-    list.addElement(40);
-    list.addElement(50);
+    addNode(&head, 4);
+    addNode(&head, 8);
+    addNode(&head, 2);
+    addNode(&head, 5);
 
-    // Menghitung jumlah elemen dalam linked list
-    int count = list.countElements();
+    int nodeCount = countNodes(head);
 
-    std::cout << "Jumlah elemen dalam linked list: " << count << std::endl;
+    std::cout << "Jumlah elemen dalam linked list: " << nodeCount << std::endl;
 
     return 0;
 }
