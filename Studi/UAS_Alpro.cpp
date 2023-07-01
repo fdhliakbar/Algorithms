@@ -5,7 +5,11 @@ void findString(){
 
 }
 
-void deleteCharacter(){
+void findSubString(){
+    
+}
+
+void deleteString(){
     
 }
 
