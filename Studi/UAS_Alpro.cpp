@@ -1,18 +1,25 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void summation(){
-
+void swap(int* a, int* b){
+    int temp = *a;
+    *a = *b;
+    *b = temp;
 }
 
-void sorting(){
-    int temp;
+void selectionSort(int nim[][3], int size){
+    for(int i = 0; i < size; i++) {
+        int minIndex = i;
 
-    for (int row = 0; row < 3; row++){
-        for (int col = 1; col < 3; col++) {
-            if (row > col) {
-                temp = row;
+        for (int j = i + 1; j < size; j++) {
+            if (nim[j][0] < nim[minIndex][0]) {
+                minIndex = j;
             }
+        }
+
+        if (minIndex != 1) {
+            swap(&nim[i][0], &nim[minIndex][0]);
+            swap(&nim[i][1], &nim[minIndex][1]);
         }
     }
 }
@@ -28,17 +35,19 @@ void printMatrix(int nim[][3]){
 
 int main(){
     int nim[3][3] = {
-        {197, 180, 190},
-        {120, 124, 105},
-        {200, 198, 253},
+        {1, 5, 3},
+        {8, 2, 1},
+        {4, 3, 6},
     };
 
-    string mhsName[3][3] = {
-        {"fadhli", "bota", "riko"},
-        {"shiro", "kiko", "sophie"},
-        {"wayne", "arthur", "monalisa"},
-    };
+    int size = sizeof(nim) / sizeof(nim[0]);
 
+    cout << "Array sebelum diurutkan: \n";
+    printMatrix(nim);
+
+    selectionSort(nim, size);
+
+    cout << "Array setelah diurutkan: \n";
     printMatrix(nim);
     return 0;
 }
