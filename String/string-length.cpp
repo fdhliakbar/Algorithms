@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-
 int lenString(string name) {
     int length = 0;
 
