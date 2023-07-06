@@ -11,6 +11,6 @@ int main(){
 
     string resultString = Stringsummation(kata1,kata2);
 
-    cout << resultString << endl;
+    cout << "Hasil: " << resultString << endl;
     return 0;
 }
