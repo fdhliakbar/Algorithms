@@ -1,3 +1,17 @@
+/**************************************************************
+
+    Author: Muhamad Fadhli Akbar, 2023
+
+    Apa itu Bucket Sort?
+
+    Bucket sort adalah sebuah algoritma pengurutan (sorting)
+    yang bekerja dengan membagi elemen" input ke dalam
+    "bucket" atau keranjang, kemudian mengurutkan masing-masing bucket
+    secara terpisah, baik dengan menggunakan algoritma pengurutan lain
+    atau menerapkan rekursi pada bucket sort itu sendiri.
+
+**************************************************************/
+
 const insertionSort = (bucket) => {
   for (i = 0; i < bucket.length; i++) {
     const up = bucket[i];
