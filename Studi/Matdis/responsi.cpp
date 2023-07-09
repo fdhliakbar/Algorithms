@@ -91,11 +91,13 @@ void tampilData(Mahasiswa* head) {
         return;
     }
 
+    cout << "----------------" << endl;
     cout << "Data Mahasiswa: " << endl;
-    cout << "NIM\t\tNama\t\tJurusan" << endl;
+    cout << "----------------" << endl;
+    cout << "NIM\tNama\tJurusan" << endl;
     Mahasiswa* temp = head;
     while (temp != nullptr) {
-        cout << temp->nim << "\t" << temp->nama << "\t\t" << temp->jurusan << endl;
+        cout << temp->nim << "\t" << temp->nama << "\t" << temp->jurusan << endl;
         temp = temp->next;
     }
 }
@@ -137,8 +139,8 @@ int main() {
                     Mahasiswa* hasilPencarian = cariData(head, nim);
                     if (hasilPencarian != nullptr) {
                         cout << "Data Mahasiswa: " << endl;
-                        cout << "NIM\t\tNama\t\tJurusan" << endl;
-                        cout << hasilPencarian->nim << "\t" << hasilPencarian->nama << "\t\t" << hasilPencarian->jurusan << endl;
+                        cout << "NIM\tNama\tJurusan" << endl;
+                        cout << hasilPencarian->nim << "\t" << hasilPencarian->nama << "\t" << hasilPencarian->jurusan << endl;
                     } else {
                         cout << "Data mahasiswa dengan NIM " << nim << " tidak ditemukan." << endl;
                     }
@@ -157,7 +159,8 @@ int main() {
                 break;
             case 0:
                 hapusSemuaData(head);
-                cout << "Terima kasih telah menggunakan program ini. Sampai jumpa!" << endl;
+                cout << "Terima kasih telah menggunakan program ini." << endl;
+                cout << "Author : Muhamad Fadhli Akbar - 2200018197" << endl;
                 break;
             default:
                 cout << "Pilihan tidak valid. Silakan pilih menu yang tersedia." << endl;
