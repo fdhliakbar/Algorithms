@@ -11,6 +11,8 @@
 #include <string>
 using namespace std;
 
+const int MAX_MAHASISWA = 100;
+
 struct Mahasiswa {
     string nim;
     string nama;
