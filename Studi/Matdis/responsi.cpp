@@ -1,124 +1,158 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <string>
 using namespace std;
 
-const int MAX_MAHASISWA = 100;
-
 struct Mahasiswa {
-    string nama;
     string nim;
-    int umur;
+    string nama;
+    string jurusan;
+    Mahasiswa* next;
 };
 
-struct DataMahasiswa {
-    Mahasiswa mahasiswa[MAX_MAHASISWA];
-    int jumlahMahasiswa;
-};
-
-void tambahMahasiswa(DataMahasiswa& data) {
-    if (data.jumlahMahasiswa == MAX_MAHASISWA) {
-        cout << "Data mahasiswa penuh!" << endl;
-        return;
-    }
-
-    Mahasiswa mhs;
-    cout << "Masukkan Nama: ";
-    getline(cin, mhs.nama);
+Mahasiswa* tambahData(Mahasiswa* head) {
+    Mahasiswa* mhs = new Mahasiswa();
     cout << "Masukkan NIM: ";
-    getline(cin, mhs.nim);
-    cout << "Masukkan Umur: ";
-    cin >> mhs.umur;
+    cin >> mhs->nim;
+    cout << "Masukkan Nama: ";
     cin.ignore();
+    getline(cin, mhs->nama);
+    cout << "Masukkan Jurusan: ";
+    getline(cin, mhs->jurusan);
+    mhs->next = nullptr;
 
-    data.mahasiswa[data.jumlahMahasiswa++] = mhs;
+    if (head == nullptr) {
+        head = mhs;
+    } else {
+        Mahasiswa* temp = head;
+        while (temp->next != nullptr) {
+            temp = temp->next;
+        }
+        temp->next = mhs;
+    }
+
     cout << "Data mahasiswa berhasil ditambahkan!" << endl;
+    return head;
 }
 
-void cariMahasiswa(const DataMahasiswa& data, const string& nim) {
-    for (int i = 0; i < data.jumlahMahasiswa; i++) {
-        if (data.mahasiswa[i].nim == nim) {
-            cout << "Nama   : " << data.mahasiswa[i].nama << endl;
-            cout << "NIM    : " << data.mahasiswa[i].nim << endl;
-            cout << "Umur   : " << data.mahasiswa[i].umur << endl;
-            return;
+Mahasiswa* cariData(Mahasiswa* head, const string& nim) {
+    Mahasiswa* temp = head;
+    while (temp != nullptr) {
+        if (temp->nim == nim) {
+            return temp;
         }
+        temp = temp->next;
     }
-    cout << "Mahasiswa dengan NIM " << nim << " tidak ditemukan." << endl;
+    return nullptr;
 }
 
-void hapusMahasiswa(DataMahasiswa& data, const string& nim) {
-    for (int i = 0; i < data.jumlahMahasiswa; i++) {
-        if (data.mahasiswa[i].nim == nim) {
-            for (int j = i; j < data.jumlahMahasiswa - 1; j++) {
-                data.mahasiswa[j] = data.mahasiswa[j + 1];
-            }
-            data.jumlahMahasiswa--;
-            cout << "Data mahasiswa dengan NIM " << nim << " berhasil dihapus!" << endl;
-            return;
+Mahasiswa* hapusData(Mahasiswa* head, const string& nim) {
+    if (head == nullptr) {
+        return nullptr;
+    }
+
+    if (head->nim == nim) {
+        Mahasiswa* temp = head->next;
+        delete head;
+        cout << "Data mahasiswa dengan NIM " << nim << " berhasil dihapus." << endl;
+        return temp;
+    }
+
+    Mahasiswa* curr = head;
+    Mahasiswa* prev = nullptr;
+    while (curr != nullptr) {
+        if (curr->nim == nim) {
+            prev->next = curr->next;
+            delete curr;
+            cout << "Data mahasiswa dengan NIM " << nim << " berhasil dihapus." << endl;
+            return head;
         }
+        prev = curr;
+        curr = curr->next;
     }
-    cout << "Mahasiswa dengan NIM " << nim << " tidak ditemukan." << endl;
+
+    cout << "Data mahasiswa dengan NIM " << nim << " tidak ditemukan." << endl;
+    return head;
 }
 
-void tampilkanMahasiswa(const DataMahasiswa& data) {
-    if (data.jumlahMahasiswa == 0) {
-        cout << "Data mahasiswa kosong." << endl;
+void tampilData(Mahasiswa* head) {
+    if (head == nullptr) {
+        cout << "Tidak ada data mahasiswa yang tersedia.";
         return;
     }
 
-    cout << "Daftar Mahasiswa:" << endl;
-    for (int i = 0; i < data.jumlahMahasiswa; i++) {
-        cout << "Nama   : " << data.mahasiswa[i].nama << endl;
-        cout << "NIM    : " << data.mahasiswa[i].nim << endl;
-        cout << "Umur   : " << data.mahasiswa[i].umur << endl;
-        cout << endl;
+    cout << "Data Mahasiswa: " << endl;
+    cout << "NIM\t\tNama\t\tJurusan" << endl;
+    Mahasiswa* temp = head;
+    while (temp != nullptr) {
+        cout << temp->nim << "\t" << temp->nama << "\t\t" << temp->jurusan << endl;
+        temp = temp->next;
+    }
+}
+
+void hapusSemuaData(Mahasiswa* head) {
+    Mahasiswa* curr = head;
+    while (curr != nullptr) {
+        Mahasiswa* next = curr->next;
+        delete curr;
+        curr = next;
     }
 }
 
 int main() {
-    cout << "";
-    DataMahasiswa data;
-    data.jumlahMahasiswa = 0;
-
+    Mahasiswa* head = nullptr;
     int pilihan;
-    string nim;
 
     do {
-        cout << "Menu:" << endl;
-        cout << "1. Tambah Mahasiswa" << endl;
-        cout << "2. Cari Mahasiswa" << endl;
-        cout << "3. Hapus Mahasiswa" << endl;
-        cout << "4. Tampilkan Mahasiswa" << endl;
+        cout << "----------------------------------" << endl;
+        cout << "Program Pengelolaan Data Mahasiswa" << endl;
+        cout << "----------------------------------" << endl;
+        cout << "1. Tambah Data Mahasiswa" << endl;
+        cout << "2. Cari Data Mahasiswa" << endl;
+        cout << "3. Hapus Data Mahasiswa" << endl;
+        cout << "4. Tampilkan Data Mahasiswa" << endl;
         cout << "0. Keluar" << endl;
         cout << "Pilih menu: ";
         cin >> pilihan;
-        cin.ignore();
 
         switch (pilihan) {
             case 1:
-                tambahMahasiswa(data);
+                head = tambahData(head);
                 break;
             case 2:
-                cout << "Masukkan NIM: ";
-                getline(cin, nim);
-                cariMahasiswa(data, nim);
+                {
+                    string nim;
+                    cout << "Masukkan NIM yang ingin dicari: ";
+                    cin >> nim;
+                    Mahasiswa* hasilPencarian = cariData(head, nim);
+                    if (hasilPencarian != nullptr) {
+                        cout << "Data Mahasiswa: " << endl;
+                        cout << "NIM\t\tNama\t\tJurusan" << endl;
+                        cout << hasilPencarian->nim << "\t" << hasilPencarian->nama << "\t\t" << hasilPencarian->jurusan << endl;
+                    } else {
+                        cout << "Data mahasiswa dengan NIM " << nim << " tidak ditemukan." << endl;
+                    }
+                }
                 break;
             case 3:
-                cout << "Masukkan NIM: ";
-                getline(cin, nim);
-                hapusMahasiswa(data, nim);
+                {
+                    string nim;
+                    cout << "Masukkan NIM yang ingin dihapus: ";
+                    cin >> nim;
+                    head = hapusData(head, nim);
+                }
                 break;
             case 4:
-                tampilkanMahasiswa(data);
+                tampilData(head);
                 break;
             case 0:
-                cout << "Terima kasih!" << endl;
+                hapusSemuaData(head);
+                cout << "Terima kasih telah menggunakan program ini. Sampai jumpa!" << endl;
                 break;
             default:
-                cout << "Pilihan tidak valid!" << endl;
-                break;
+                cout << "Pilihan tidak valid. Silakan pilih menu yang tersedia." << endl;
         }
-        cout << endl;
 
+        cout << endl;
     } while (pilihan != 0);
 
     return 0;
