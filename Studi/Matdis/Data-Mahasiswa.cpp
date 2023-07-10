@@ -1,12 +1,3 @@
-/*********************************************
-
- * Judul : Pengelolaan Data Mahasiswa menggunakan Relasi
- * Author: Muhamad Fadhli Akbar - 2200018197
- * Prodi: Informatika(A)
-
-
-********************************************/
-
 #include <iostream>
 #include <string>
 using namespace std;
