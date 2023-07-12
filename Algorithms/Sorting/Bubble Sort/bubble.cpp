@@ -1,21 +1,25 @@
 #include <iostream>
 using namespace std;
 
+void swap(int& x, int& y) {
+    int temp = x;
+    x = y;
+    y = temp;
+}
+
 void bubbleSort(int numbers[], int size){
     int count = 0;
-    int i = 0, j = 0;
+    int i, j;
 
-    for (i; i < size; i++) {
-        for (j; j < (size - i - 1); j++) {
+    for (i = 0; i < size - 1; i++) {
+        for (j = 0; j < size - i - 1; j++) {
             if (numbers[j] > numbers[j+1]) {
-                int temp = numbers[j];
-                numbers[j] = numbers[j + 1];
-                numbers[j + 1] = temp;
-                count = 1;
+                swap(numbers[j], numbers[j+1]);
             }
         }
     }
 }
+
 
 void printNumbers(int numbers[], int size) {
     for (int i = 0; i < size; i++) {
@@ -28,8 +32,6 @@ int main(){
     int size = sizeof(elements) / sizeof(elements[0]);
 
     bubbleSort(elements, size);
-
-    cout << "Hasil : ";
 
     printNumbers(elements, size);
 }
