@@ -47,10 +47,9 @@ class DatabaseMahasiswa:
 
 
 def clear_screen():
-    # Sesuaikan sesuai dengan sistem operasi yang Anda gunakan
-    if os.name == 'posix':  # Untuk sistem operasi berbasis Unix (Linux, macOS)
+    if os.name == 'posix':
         _ = os.system('clear')
-    else:  # Untuk sistem operasi Windows
+    else:
         _ = os.system('cls')
 
 
@@ -67,7 +66,7 @@ while True:
     print("5. Keluar")
 
     pilihan = input("Masukkan Pilihan anda : ")
-    clear_screen()  # Clear screen setelah pengguna memilih opsi
+    clear_screen()
 
     if pilihan == "1":
         nim = input("Masukkan NIM: ")
@@ -93,5 +92,5 @@ while True:
     else:
         print("Pilihan tidak valid. Silakan masukkan angka 1-5.")
 
-    input("Tekan Enter untuk melanjutkan...")
-    clear_screen()  # Clear screen sebelum menampilkan menu berikutnya
+    input("\nTekan Enter untuk melanjutkan...")
+    clear_screen()
