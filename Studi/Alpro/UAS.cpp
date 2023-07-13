@@ -39,9 +39,16 @@ void printArrays(int arr[][3], int rows) {
 
 // }
 
-// void searchString(){
+void searchString(string words, int lenString){
+    string words = "";
 
-// }
+    for (int i = 0; i < lenString; i++) {
+        for (int j = 0; j < lenString; j++) {
+
+        }
+    }
+
+}
 
 
 int arraysSummation(int arr[][3], int rows, int start_col, int end_col) {
