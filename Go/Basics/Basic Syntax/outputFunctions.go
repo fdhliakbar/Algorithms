@@ -14,4 +14,6 @@ func main() {
 
 	fmt.Print(firstName)
 	fmt.Print(lastName)
+
+	fmt.Println(firstName, lastName)
 }
