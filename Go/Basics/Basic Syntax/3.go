@@ -19,14 +19,9 @@ func tambah(a, b int) int {
 
 
 func main() {
-	var lastName string
-	lastName = "Akbar"
+	firstName := "Muhamad"
+	middleName := "Fadhli"
+	lastName := "Akbar"
 
-
-	var myName string = "fadhli Akbar"
-	myAge := 18
-
-	fmt.Println(myName)
-	fmt.Println(myAge)
-	fmt.Println(lastName)
+	fmt.Println(firstName + middleName + lastName)
 }
