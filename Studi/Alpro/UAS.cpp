@@ -35,29 +35,27 @@ void printArrays(int arr[][3], int rows) {
     }
 }
 
-// void getString(){
+
+
+// void searchString(string words, int lenString){
+//     string words = " ";
+
+//     for (int i = 0; i < lenString; i++) {
+//         for (int j = 0; j < lenString; j++) {
+
+//         }
+//     }
 
 // }
 
-void searchString(string words, int lenString){
-    string words = "";
 
-    for (int i = 0; i < lenString; i++) {
-        for (int j = 0; j < lenString; j++) {
-
-        }
-    }
-
-}
-
-
-int arraysSummation(int arr[][3], int rows, int start_col, int end_col) {
-    if (start_col > end_col) {
-        return 0;
-    } else {
-        return arr[rows][start_col] + arraysSummation(arr, rows, start_col + 1, end_col);
-    }
-}
+// int arraysSummation(int arr[][3], int rows, int start_col, int end_col) {
+//     if (start_col > end_col) {
+//         return 0;
+//     } else {
+//         return arr[rows][start_col] + arraysSummation(arr, rows, start_col + 1, end_col);
+//     }
+// }
 
 int main(){
     int nim[3][3] = {
