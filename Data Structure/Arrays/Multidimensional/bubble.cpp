@@ -6,7 +6,6 @@ void bubbleSort2DArray(int arr[][3], int rows) {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < 3 - 1; j++) {
                 if (arr[i][j] > arr[i][j + 1]) {
-                    // Tukar posisi elemen jika elemen saat ini lebih besar dari elemen berikutnya
                     int temp = arr[i][j];
                     arr[i][j] = arr[i][j + 1];
                     arr[i][j + 1] = temp;
