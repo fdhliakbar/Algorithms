@@ -1,4 +1,4 @@
-# What are Algorithms and Data Structures in Programming
+# What are Algorithms and Data Structures in Programming?
 
 Algorithm is a sequence of logical steps that must be followed to complete a task or problem. In programming, algorithms are used to design effective and efficient programs. Algorithms allow programmers to solve problems in a systematic way, and produce programs that are easier to understand and maintain.
 
@@ -20,7 +20,7 @@ By following this workflow, **you will build a solid foundation in algorithms an
 
 ---
 
-### El Psy Congroo :)
+### El Psy Congroo
 
 <body>
 <img src="https://github.com/fdhliakbar/Algorithms/assets/104522615/ba424709-65b2-4dee-ac57-ac936a1403a1" alt="Ghibli Cat" style="width:240px;">
