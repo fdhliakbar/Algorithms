@@ -1,73 +1,54 @@
 #include <iostream>
-using namespace std;
 
-/**********************************************
-
- <<<<<<<<<<<< Array 2 Dimensi >>>>>>>>>>>>>
-            Ada 4 Soal ketika UAS :
-            Pengurutan(sorting)
-            Pecah string(get string)
-            Pencarian string(search)
-            Recursive (recursive)
-
-**********************************************/
-
-void bubbleSort2D(int arr[][3], int rows) {
-    for (int k = 0; k < rows; k++) {
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < 3 - 1; j++) {
-                if (arr[i][j] > arr[i][j + 1]) {
-                    int temp = arr[i][j];
-                    arr[i][j] = arr[i][j + 1];
-                    arr[i][j + 1] = temp;
+void selectionSort(int numbers[][3], int rows, int cols) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            int minIndex = j;
+            for (int k = j + 1; k < cols; k++) {
+                if (numbers[i][k] < numbers[i][minIndex]) {
+                    minIndex = k;
                 }
+            }
+            if (minIndex != j) {
+                int temp = numbers[i][j];
+                numbers[i][j] = numbers[i][minIndex];
+                numbers[i][minIndex] = temp;
             }
         }
     }
 }
 
-void printArrays(int arr[][3], int rows) {
+void printMatrix(int numbers[][3], int rows, int cols){
     for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < rows; j++) {
-            cout << arr[i][j] << " ";
+        for (int j = 0; j < cols; j++) {
+            std::cout << numbers[i][j] << " ";
         }
-        cout << '\n';
+        std::cout<<'\n';
     }
 }
 
 
+void searchStr(int number[][3], int key) {
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            if (number[i][j] == key) {
+                std::cout << number[i][j] << " ";
+            }
+        }
+    }
+}
 
-// void searchString(string words, int lenString){
-//     string words = " ";
-
-//     for (int i = 0; i < lenString; i++) {
-//         for (int j = 0; j < lenString; j++) {
-
-//         }
-//     }
-
-// }
-
-
-// int arraysSummation(int arr[][3], int rows, int start_col, int end_col) {
-//     if (start_col > end_col) {
-//         return 0;
-//     } else {
-//         return arr[rows][start_col] + arraysSummation(arr, rows, start_col + 1, end_col);
-//     }
-// }
 
 int main(){
-    int nim[3][3] = {
-        {2, 5, 1},
-        {4, 3, 6},
-        {9, 8, 7},
+    int numbers[3][3] = {
+        {4, 2, 5},
+        {1, 5, 4},
+        {3, 8, 2},
     };
+    int rows = 3, cols = 3, searchKey = 1;
 
-    bubbleSort2D(nim, 3);
-
-    cout << "Hasil : \n";
-    printArrays(nim, 3);
+    //selectionSort(numbers, rows, cols);
+    searchStr(numbers, searchKey);
 
     return 0;
 }
