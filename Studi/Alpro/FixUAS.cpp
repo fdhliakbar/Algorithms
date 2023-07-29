@@ -1,26 +1,51 @@
 #include <iostream>
 using namespace std;
 
+/************************************************************************
+
+                    * Author by fdhliakbar
+
+    1. Buatlah Fungsi dengan nama "sortingStock" untuk
+        mengurutkan secara ascending berdasarkan nilai pada
+        kolom ke-3. buatkan kembalian return berupa
+        array 2 dimensi yang sudah terurut
+    
+    2. Buatkan fungsi getSubString dengan parameter input "keyword"
+        untuk mendapatkan string digit 5 & 6. kembalian return
+        berupa string dengan contoh output = "B2"
+
+    3. Buatkan fungsi getProductName
+
+
+    4. Buatkan fungsi rekursif bernama stockSum untuk menghitung jumlah
+        elemen/nilai pada kolom ke-3 dari inputan array.
+        Output : 25
+
+
+************************************************************************/
+
+
 struct Product {
     string id;
     string name;
     int stock;
 };
 
-int stockSum(Product array[][3], int row, int sum) {
-    if (row == 5) { // Baris ke-5 (indeks baris 4) sudah tercapai, mengembalikan hasil penjumlahan sementara
-        return sum;
+// Nomor 1
+int sortingStock(Product array[][3]) {
+    int afterSorting[5][3];
+
+    for (int col = 0; col < 5; col++) {
+        for (int row = 0; row < 3; row++) {
+            if (array[row][col].stock < array[row][col + 1].stock) {
+                int temp = array[row][col].stock;
+            }
+        }
     }
-
-    // Menambahkan nilai stok dari kolom ke-3 pada baris saat ini ke dalam sum
-    sum += array[row][2].stock;
-
-    // Memanggil fungsi rekursif untuk baris berikutnya (row + 1)
-    return stockSum(array, row + 1, sum);
+    return afterSorting[0][0];
 }
 
-
-// No 2
+// Nomor 2
 string getSubString(string key) {
     string result = "";
 
@@ -30,6 +55,7 @@ string getSubString(string key) {
     return result;
 }
 
+// Nomor 3
 void getProductName(Product array[][3], string codeValue) {
     for (int i = 0; i < 5; i++) {
         for (int j = 0; j < 3; i++) {
@@ -39,6 +65,17 @@ void getProductName(Product array[][3], string codeValue) {
         }
     }
 }
+
+int stockSum(Product array[][3], int row, int sum) {
+    if (row == 5) {
+        return sum;
+    }
+
+    sum += array[row][2].stock;
+
+    return stockSum(array, row + 1, sum);
+}
+
 
 
 int main() {
@@ -50,11 +87,6 @@ int main() {
         {"B5", "Potabee 90 Gr", 7},
     };
     string keyword = "A191B2";
-
-    int sum = stockSum(array, 0, 0); // Memulai perhitungan dari baris pertama (indeks baris 0) dengan sum awal 0
-
-    //cout << "Total stock pada baris ke-3: " << sum << endl;
-
     string codeValue = getSubString(keyword);
 
     getProductName(array,codeValue);
