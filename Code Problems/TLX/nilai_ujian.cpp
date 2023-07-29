@@ -24,9 +24,6 @@
 
 int main() {
     auto start = std::chrono::high_resolution_clock::now();
-
-    // Kode program C++ Anda di sini
-
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> duration = end - start;
    
