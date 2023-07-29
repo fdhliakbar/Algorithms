@@ -1,7 +1,7 @@
 #include <iostream>
 
 int main(){
-    short int x = 6, y = 4;
+    unsigned short int x = 6, y = 4;
     std::cout << x << " " << y << '\n';
 
     // Operation
