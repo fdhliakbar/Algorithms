@@ -12,7 +12,11 @@ int translationsRotaions(short int A[], short int p[]) {
             A[0] -= p[0];
             A[1] -= p[1];
         }
-        
+
+    }
+
+    if (result < 0) {
+        cout << "Ok" << '\n';
     }
 }
 
