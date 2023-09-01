@@ -1,7 +1,8 @@
 {
   "files.associations": {
     "sstream": "cpp",
-    "regex": "cpp"
+    "regex": "cpp",
+    "iostream": "cpp"
   },
   "[python]": {
     "editor.defaultFormatter": "ms-python.autopep8"
