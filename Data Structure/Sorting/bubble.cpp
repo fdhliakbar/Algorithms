@@ -1,28 +1,21 @@
-#include <iostream>
+// C++ program to demonstrate sort()
+
+#include <bits/stdc++.h>
 using namespace std;
 
-void bubbleSort(int values[], int n) {
-    for (int i = 0; i < n - 1; i++) {
-        for (int j = 0; j < n - i - 1; j++) {
-            if (values[j] > values[j+1]) {
-                swap(values[j], values[j + 1]);
-            }
-        }
-    }
-}
+int main()
+{
+	int arr[] = { 0, 1, 5, 8, 9, 6, 7, 3, 4, 2 };
+	int n = sizeof(arr) / sizeof(arr[0]);
 
-void printArray(int values[], int n) {
-    for (int i = 0; i < n; i++) {
-        cout << values[i] << " ";
-    }
-    cout << '\n';
-}
+	// Sort the elements which lies in the range of 2 to
+	// (n-1)
+	sort(arr + 2, arr + n);
 
-int main(){
-    int values[5] = {3, 4, 2, 5, 1};
-    int lenvalues = sizeof(values) / sizeof(values[0]);
+	cout << "Array after sorting : \n";
+	for (int i = 0; i < n; ++i)
+		cout << arr[i] << " ";
 
-    bubbleSort(values, lenvalues);
-    printArray(values, lenvalues);
-    return 0;
+	return 0;
 }
+// This code is contributed by Suruchi Kumari

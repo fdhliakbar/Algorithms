@@ -12,6 +12,7 @@
 '''
     Solusi:
     menggunakan sebuah graph, untuk mengetahui jarak terpendek
+    
 '''
 
 n = 8
